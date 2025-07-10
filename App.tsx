@@ -5,18 +5,27 @@ import MapView, { Marker } from 'react-native-maps';
 export default function App() {
   return (
     <View style={styles.container}>
+      
       <MapView style={styles.maps}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+      // Map configuration
+       initialRegion={{
+          latitude: -22.9068,
+          longitude: -43.1729,
+          latitudeDelta: 0.100,
+          longitudeDelta: 0.100,
         }}
-        showsUserLocation={true}
+        // Map features
+        mapType="terrain"
+        // Map controls
         showsMyLocationButton={true}
         showsCompass={true}
+        rotateEnabled={true}
+        scrollEnabled={true}
+        zoomEnabled={true}
+        pitchEnabled={true}
+        showsUserLocation={true}
         showsScale={true}
-        showsTraffic={true}
+        showsTraffic={false}
         showsIndoors={true}
         showsBuildings={true}
         showsPointsOfInterest={true}>
@@ -33,6 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
+    opacity: 0.9,
   },
   maps:{
     width: '100%',
